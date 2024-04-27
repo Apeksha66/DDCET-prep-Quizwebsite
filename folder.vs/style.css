@@ -1,5 +1,3 @@
-
-
 * {
     margin: 0;
     padding: 0;
@@ -404,17 +402,17 @@ body{
     font-weight: 600;
 }
 
-.percentage-container .score-text {
+.percentage-container .score-test {
     font-size: 26px;
     font-weight: 600;
     margin-top: 20px;
 }
 
-.result-box .buttons {
+.result-box .button {
     display: flex;
 }
 
-.buttons button {
+.button button {
     width: 130px;
     height: 47px;
     background: #c40094;
@@ -429,26 +427,25 @@ body{
     transition: .5s;
 }
 
-.buttons button:nth-child(1):hover {
+.button button:nth-child(1):hover {
     background: #c40094;
     color: #c40094;
 }
 
-.buttons button:nth-child(2) {
+.button button:nth-child(2) {
     background: transparent;
     color: #c40094;
 }
 
-.buttons button:nth-child(2):hover {
+.button button:nth-child(2):hover {
     background: #c40094;
     color: #fff;
 }
 
-/*responsive example for tablet*/
+/*responsive example for tablet
 @media (max-width:768px){
-
 }
-/*for mobile*/
+/*for mobile
 @media(max-width:480px){
 
-}
+}8/
