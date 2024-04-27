@@ -442,10 +442,11 @@ body{
     color: #fff;
 }
 
-/*responsive example for tablet
+/*responsive example for tablet*/
 @media (max-width:768px){
+    
 }
-/*for mobile
+/*for mobile*/
 @media(max-width:480px){
 
-}8/
+}
