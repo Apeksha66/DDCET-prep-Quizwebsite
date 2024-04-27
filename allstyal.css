@@ -50,17 +50,17 @@ body{
 
 .main { 
     min-height: 100vh;
-    background:url('green-hexagon-img.jpg') no-repeat;
+    background:url('background.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
     transition: .3s ease;
 }
-
 .main.active {
     filter: blur(15px);
     pointer-events: none;
 }
+
 
 .container {
     display: flex;
@@ -200,7 +200,7 @@ body{
     position: relative;
     left: -50%;
     transition: .8s ease-in-out;
-    transition-delay: .25s;
+    transition-delay: .20s;
     z-index: 100;
     display: flex;
     justify-content: center;
@@ -221,7 +221,7 @@ body{
     flex-direction: column;
     padding: 20px 30px;
     opacity: 0;
-    pointer-events: none;
+    /*pointer-events: none;*/
     transform: scale(.9);
     transition: .3s ease;
     transition-delay: 0s;
@@ -326,12 +326,13 @@ body{
     font-weight: 600;
     cursor: pointer;
     transition: .5s;
-   /* pointer-events: none;*/
+    pointer-events: none;
 }
 
 .quiz-footer .next-btn.active:hover {
     background: #950170;
     border-color: #950170;
+
 }
 
 .quiz-footer .next-btn.active {
@@ -443,12 +444,11 @@ body{
     color: #fff;
 }
 
-/*responsive example*/
-/*for tablet
+/*responsive example for tablet*/
 @media (max-width:768px){
 
 }
-/*for mobile
+/*for mobile*/
 @media(max-width:480px){
 
-}*/
+}

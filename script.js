@@ -58,11 +58,13 @@ goHomeBtn.onclick = () => {
 }
 
 
-let questionCount = 0;
+
 let questionNumb = 1;
 let userScore = 0;
+let questionCount = 0;
 
 
+const nextBtn = document.querySelector('.next-btn');
 nextBtn.onclick = () => {
     if (questionCount < questions.length - 1) {
         questionCount++;
@@ -71,23 +73,33 @@ nextBtn.onclick = () => {
         questionNumb++;
         questionCounter(questionNumb);
 
-        nextBtn.classList.remove('active');
-    } else {
-        showResultBox();
+        nextBtn.classList.remove('active');   
+    }
+    else {
+      showResultBox();
+        
     }
 }
+const optionList = document.querySelector('.option-list');
 
-const optionList = document.querySelector('.option-List');
+
 
 //getting questions and options from array
 function showQuestions(index) {
-        
-        
-        
+    const questionText = document.querySelector('.question-text');
+    questionText.textContent=`${questions[index].numb}. ${questions[index].question}`;
+
+
+    let optionTag =`<div class="option"><span>${questions[index].options[0]}</span></div>
+        <div class="option"><span>${questions[index].options[1]}</span></div>
+        <div class="option"><span>${questions[index].options[2]}</span></div>
+        <div class="option"><span>${questions[index].options[3]}</span></div>`;
 
     optionList.innerHTML = optionTag;
+    const option = optionList.querySelectorAll('.options');
 
-    const option = document.querySelectorAll('.option');
+    //set onclick attribute to all available options
+
     for (let i = 0; i < option.length; i++) {
         option[i].setAttribute('onclick', 'optionSelected(this)');
     }
@@ -118,7 +130,7 @@ function optionSelected(answer) {
 
     //if user has selected,disable all option
     for (let i = 0; i < allOptions; i++) {
-        optionList.childer[i].classList.add(disabled);
+        optionList.children[i].classList.add(disabled);
     }
 
     nextBtn.classList.add('active');
@@ -126,12 +138,12 @@ function optionSelected(answer) {
 
 function questionCounter(index) {
     const questionTotal = document.querySelector('.question-total');
-    questionTotal.tetContent = '${index} of ${questions.length} Questions';
+    questionTotal.textContent = `${index} of ${questions.length} Questions`;
 }
 
 function headerScore() {
     const headerScoreText = document.querySelector('.header-score');
-    headerScoreText.textContent = 'Score: ${userScore}/ ${questions.length}';
+    headerScoreText.textContent = `Score: ${userScore}/ ${questions.length}`;
 }
 
 function showResultBox() {
@@ -139,7 +151,7 @@ function showResultBox() {
     resultBox.classList.add('active');
 
     const scoreText = document.querySelector('.score-text');
-    scoreText.textContent = 'Your Score ${userScore} out of ${questions.length}';
+    scoreText.textContent = `Your Score ${userScore} out of ${questions.length}`;
 
     const progressvalue = document.querySelector('.progress-value');
     let progressStartValue = -1;
@@ -149,8 +161,8 @@ function showResultBox() {
     let progress = setInterval(() => {
         progressStartValue++;
         //console.log(progressStartValue);
-        progressvalue.textContent = '${progressStartValue}%';
-        circularprogress.style.background = 'conic-gradient(#c40094 ${progressStartValue*3.6}deg, rgba(255,255,255,.1) 0deg)';
+        progressvalue.textContent = `${progressStartValue}%`;
+        circularprogress.style.background = `conic-gradient(#c40094 ${progressStartValue*3.6}deg, rgba(255,255,255,.1) 0deg)`;
         if (progressStartValue == progressEndValue) {
             clearInterval(progress);
         }
