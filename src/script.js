@@ -143,18 +143,19 @@ function headerScore() {
 }
 
 function showResultBox() {
-  
+
   quizBox.classList.remove('active');
   resultBox.classList.add('active');
 
   const scoreTest = document.querySelector('.score-test');
   scoreTest.textContent = `Your Score ${userScore} out of ${questions.length}`;
 
-  const circularprogress=document.querySelector('.circular-progress');
+  const circularprogress = document.querySelector('.circular-progress');
   const progressvalue = document.querySelector('.progress-value');
 
-  let progressStartValue= -1;
-  let progressEndValue = (userScore / questions.length) * 100;
+  let progressStartValue = -1;
+ // let progressEndValue = (userScore / questions.length) * 100;
+  let progressEndValue=(Math.floor((userScore/questions.length)*100));
   let speed = 20;
 
   let progress = setInterval(() => {
@@ -163,5 +164,9 @@ function showResultBox() {
     if (progressStartValue = progressEndValue) {
       clearInterval(progress);
     }
+
+    progressvalue.textContent = `${progressStartValue}%`;
+    circularprogress.style.background = `conic-gradient(#c40094 ${progressStartValue * 3.6}deg, rgba(255,255,255,.1) 0deg)`;
   }, speed);
 }
+
