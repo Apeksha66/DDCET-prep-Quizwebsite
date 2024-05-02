@@ -48,7 +48,7 @@ body{
 
 .main { 
     min-height: 100vh;
-    background:url('background-img.jpeg') no-repeat;
+    background:url('bg.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;

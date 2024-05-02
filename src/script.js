@@ -7,9 +7,6 @@ const quizSection = document.querySelector(".quiz-section");
 const quizBox = document.querySelector(".quiz-box");
 const resultBox = document.querySelector(".result-box");
 
-//const tryAgainBtn = document.querySelector(".tryagain-btn");
-//const goHomeBtn = document.querySelector(".gohome-btn");
-
 startBtn.onclick = () => {
   popupInfo.classList.add("active");
   main.classList.add("active");
